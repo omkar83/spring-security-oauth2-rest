@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<jdk-version>1.8</jdk-version>
+		<jdk-version>1.6</jdk-version>
 		<maven-compiler-plugin>3.0</maven-compiler-plugin>
 		<maven-war-pugin>2.4</maven-war-pugin>
 		<org.springframework.version>4.0.5.RELEASE</org.springframework.version>
@@ -18,6 +18,7 @@
 		<spring.security.version>3.2.4.RELEASE</spring.security.version>
 		<jersey-spring>1.18.1</jersey-spring>
 		<servlet-version>3.0.1</servlet-version>
+		<jackson.library>2.7.5</jackson.library>
 	</properties>
 
 	<dependencies>
@@ -309,6 +310,14 @@
 			<version>5.1.31</version>
 		</dependency>
 
+		<!-- JSON to HTTP start -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.library}</version>
+		</dependency>
+		<!-- JSON to HTTP end -->
+
 
 		<!-- Jersey Spring Integration -->
 		<dependency>
@@ -369,7 +378,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>${maven-war-pugin}</version>
-			</plugin>			
+			</plugin>
 		</plugins>
 	</build>
 
