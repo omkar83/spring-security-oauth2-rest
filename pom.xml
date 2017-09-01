@@ -13,12 +13,14 @@
 		<maven-compiler-plugin>3.0</maven-compiler-plugin>
 		<maven-war-pugin>2.4</maven-war-pugin>
 		<org.springframework.version>4.0.5.RELEASE</org.springframework.version>
+		<spring.data.jpa.version>1.7.1.RELEASE</spring.data.jpa.version>
 		<hibernate>4.3.6.Final</hibernate>
 		<spring-security-oauth2>2.0.1.RELEASE</spring-security-oauth2>
 		<spring.security.version>3.2.4.RELEASE</spring.security.version>
 		<jersey-spring>1.18.1</jersey-spring>
 		<servlet-version>3.0.1</servlet-version>
 		<jackson.library>2.7.5</jackson.library>
+		
 	</properties>
 
 	<dependencies>
@@ -159,6 +161,14 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- Spring Data JPA start -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${spring.data.jpa.version}</version>
+		</dependency>
+		<!-- Spring Data JPA end -->
+		
 
 		<!-- Spring security Dependencies -->
 		<dependency>

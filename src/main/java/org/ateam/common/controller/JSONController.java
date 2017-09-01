@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.ateam.common.model.AnnuityInfo;
 import org.ateam.common.model.Person;
+import org.ateam.common.repository.AnnuityInfoRepository;
 import org.ateam.common.repository.OauthRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,35 +17,43 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/test")
 public class JSONController {
-	
+
 	@Autowired
 	private OauthRepository oauthRepository;
 
-	@RequestMapping(value="{name}", method = RequestMethod.GET)
+	@Autowired
+	private AnnuityInfoRepository annuityInfoRepository;
+
+	@RequestMapping(value = "{name}", method = RequestMethod.GET)
 	public @ResponseBody Person getPersonInJSON(@PathVariable String name) {
 
 		Person person = new Person();
 		person.setName(name);
-		
+
 		return person;
 	}
-	
-	@RequestMapping(value="/search", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public @ResponseBody Person getAnnuityInfo() {
 
 		Person person = new Person();
 		person.setName("OmkAR");
-		
+
 		return person;
 	}
-	
-	@RequestMapping(value="/info", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/info", method = RequestMethod.GET)
 	public @ResponseBody List<Map<String, Object>> getAnnuityInfoDetails() {
 		List<Map<String, Object>> info = oauthRepository.getByAnnuityInfo();
-		
+
 		return info;
 	}
-	
-	
-	
+
+	@RequestMapping(value = "/infodb", method = RequestMethod.GET)
+	public @ResponseBody List<AnnuityInfo> getAnnuityInfoFromDB() {
+		List<AnnuityInfo> info = annuityInfoRepository.findAll();
+
+		return info;
+	}
+
 }
