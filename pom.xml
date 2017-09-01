@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<jdk-version>1.6</jdk-version>
+		<jdk-version>1.7</jdk-version>
 		<maven-compiler-plugin>3.0</maven-compiler-plugin>
 		<maven-war-pugin>2.4</maven-war-pugin>
 		<org.springframework.version>4.0.5.RELEASE</org.springframework.version>
